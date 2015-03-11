@@ -157,6 +157,7 @@ public class BikeDaoImp implements BikeDaoInf {
 				bike.setCc(rs.getString(BIKE_CC));
 
 				bikesList.add(bike);
+				System.out.println(bikesList);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -170,14 +171,14 @@ public class BikeDaoImp implements BikeDaoInf {
 		try {
 			con = daoUtil.getConnection();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery(GET_ALL_BIKES);
+			rs = stmt.executeQuery("select * from bike");
 
 			while (rs.next()) {
 				bike = new Bike();
 
 				bike.setBikeId(rs.getString(BIKE_ID));
 				bike.setBikeName(rs.getString(BIKE_NAME));
-				bike.setBikeBrand(rs.getString(BRAND_NAME));
+				bike.setBikeBrand(rs.getString(BIKE_BRAND));
 				bike.setPrice(rs.getDouble(BIKE_PRICE));
 				bike.setCc(rs.getString(BIKE_CC));
 

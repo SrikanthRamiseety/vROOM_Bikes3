@@ -71,25 +71,25 @@
 	<br>
 	<br>
 	<div class="container pull-center" id="bikes">
-		<c:forEach begin="${(param.pagenumber - 1) * 10 }" end="${(param.pagenumber * 10) - 1 }" var="i">
-			<div id="${bikes.get(i).getBikeName() }" class="bike">
+		<c:forEach items="${bikes }" var="i">
+			<div id="${i.getBikeName() }" class="bike">
 				<fieldset>
 
 					<div class="image">
-						<img alt="loading..." src="images/${bikes.get(i).getBikeName() }.jpg"
+						<img alt="loading..." src="images/${bikelist.get(i).getBikeName() }.jpg"
 							height="100px" width="100px">
 					</div>
 					<div class="data">
-						<c:out value="${bikes.get(i).getBikeName() }"></c:out>
+						<c:out value="${i.getBikeName() }"></c:out>
 						<br> Rs.
-						<c:out value="${bikes.get(i).getPrice() }"></c:out>
+						<c:out value="${i.getPrice() }"></c:out>
 						<br>
-						<c:out value="${bikes.get(i).getCc() }"></c:out>
+						<c:out value="${i.getCc() }"></c:out>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="admin/editbike?bikeId=${bikes.get(i).getBikeId() }"
+						<a href="admin/editbike?bikeId=${i.getBikeId() }"
 							class="btn btn-info btn-xs">EDIT </a> <a
-							href="admin/removebike?bikeId=${bikes.get(i).getBikeId() }"
+							href="admin/removebike?bikeId=${i.getBikeId() }"
 							class="btn btn-danger btn-xs">REMOVE </a>
 					</div>
 

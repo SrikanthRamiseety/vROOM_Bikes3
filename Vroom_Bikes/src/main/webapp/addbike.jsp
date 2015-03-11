@@ -56,7 +56,7 @@ em {
 
 		<div class="panel-body">
 			<div class="form-group">
-				<select id="brand">
+				<select id="brand" name="bikebrand">
 					<option selected="selected">--Select Brand--</option>
 					<c:forEach items="${brandsList }" var="brand">
 						<option value="${brand.getBrandName() }">

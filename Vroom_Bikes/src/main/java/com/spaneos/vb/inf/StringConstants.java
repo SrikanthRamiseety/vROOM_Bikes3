@@ -6,20 +6,20 @@ public interface StringConstants {
 	String ADD_BRAND = "insert into brand(brandId,brandName) values (?,?)";
 	String GET_BRANDS_BY_SEARCH_STR = "select * from brand where brandName like ?";
 	
-	String GET_ALL_BIKES = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.cc from bike bi, brand br where bi.bikeBrand = br.BrandId";
-	String GET_BIKES_BY_BRAND = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.cc from bike bi, brand br where bi.bikeBrand = br.BrandId and br.brandName = ?";
-	String ADD_BIKE = "insert into bike(bikeId,bikeName,bikeBrand,bikePrice,cc) values (?,?,?,?,?)";
+	String GET_ALL_BIKES = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.bikecc from bike bi, brand br where bi.bikeBrand = br.BrandId";
+	String GET_BIKES_BY_BRAND = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.bikecc from bike bi, brand br where bi.bikeBrand = br.BrandId and br.brandName = ?";
+	String ADD_BIKE = "insert into bike(bikeId,bikeName,bikeBrand,bikePrice,bikecc) values (?,?,?,?,?)";
 	String DELETE_BIKE = "delete from bike where bikeId = ?";
-	String UPDATE_BIKE = "update bike set bikeName = ?, bikeBrand = ?, bikePrice = ?, cc = ? where bikeId = ?";
-	String GET_BIKES_BY_BUDGET = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.cc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikePrice > ? and bi.price < ?";
-	String GET_BIKE_BY_ID="select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.cc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikeId=?";
-	String GET_BIKES_BY_SEARCH_STR = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.cc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikeName like %?%";
+	String UPDATE_BIKE = "update bike set bikeName = ?, bikeBrand = ?, bikePrice = ?, bikecc = ? where bikeId = ?";
+	String GET_BIKES_BY_BUDGET = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.bikecc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikePrice > ? and bi.price < ?";
+	String GET_BIKE_BY_ID="select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.bikecc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikeId=?";
+	String GET_BIKES_BY_SEARCH_STR = "select bi.bikeId,bi.bikeName,br.brandName,bi.bikePrice,bi.bikecc from bike bi, brand br where bi.bikeBrand = br.BrandId and bi.bikeName like %?%";
 	
 	String BIKE_ID = "bikeId";
-	String BIKE_NAME = "bikeName";
+	String BIKE_NAME = "bikeName";	
 	String BIKE_BRAND = "bikeBrand";
 	String BIKE_PRICE = "bikePrice";
-	String BIKE_CC = "cc";
+	String BIKE_CC = "bikecc";
 	
 	String BRAND_ID = "brandId";
 	String BRAND_NAME = "brandName";

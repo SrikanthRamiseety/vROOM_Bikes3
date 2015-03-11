@@ -70,10 +70,11 @@ public class AdminServlet extends HttpServlet {
 
 		} else if (uri.endsWith("viewbikes")) {
 			List<Bike> list = bikeServiceImp.getAllBikes();
+			System.out.println(list);
 			int pageNumber = Integer.parseInt(req.getParameter("pagenumber"));
 			req.setAttribute("bikes", list);
 
-			req.getRequestDispatcher("../viewbikes.jsp?pagenumber="+pageNumber).forward(req, resp);
+			req.getRequestDispatcher("../viewbikes.jsp").forward(req, resp);
 
 		} else if (uri.endsWith("editbike")) {
 			String id = req.getParameter("bikeId");

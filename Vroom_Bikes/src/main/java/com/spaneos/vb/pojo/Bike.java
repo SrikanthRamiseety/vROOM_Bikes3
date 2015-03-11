@@ -1,5 +1,4 @@
 package com.spaneos.vb.pojo;
-
 public class Bike {
 	
 	String bikeId;
